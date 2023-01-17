@@ -10,48 +10,68 @@
 				font-thin">You dope beats issa waiting you</h1>
 
 					<div class="mb-4">
-						<label class="
-					blockuppercase
-					tracking-wide
-					text-xs
-					font-bold
-					mb-2
-					text-gray-100
-					">
-							First Name
-						</label>
-
-						<input type="text" class="
-					appearance-none
-					block
-					w-full
-					bg-white
-					text-gray-700
-					border
-					border-gray-400
-					rounded
-					py-3
-					px-4
-					leading-tight
-					focus:outline-none
-					focus:bg-white
-					focus:border-gray-500
-					">
+						<TextInput
+							label="First Name"
+							:labelColor="false"
+							placeholder="Lil"
+							v-model:input="firstName"
+							inputType="text"
+							error="Show your artist name"
+						/>
 					</div>
-					<span class="text-red-500">
-						This is an error message
-					</span>
+					<div class="mb-4">
+						<TextInput
+							label="Last Name"
+							:labelColor="false"
+							placeholder="Tracy"
+							v-model:input="lastName"
+							inputType="text"
+							error="Show your artist name"
+						/>
+					</div>
+					<div class="mb-4">
+						<TextInput
+							label="Email"
+							:labelColor="false"
+							placeholder="lil.tracy@m.com"
+							v-model:input="email"
+							inputType="text"
+							error="Show your artist name"
+						/>
+					</div>
+					<div class="mb-4">
+						<TextInput
+							label="Password"
+							:labelColor="false"
+							placeholder="password123"
+							v-model:input="password"
+							inputType="password"
+							error="Show your artist name"
+						/>
+					</div>
+					<div class="mb-4">
+						<TextInput
+							label="Confirm Password"
+							:labelColor="false"
+							placeholder="Artist Name"
+							v-model:input="confirmPassword"
+							inputType="password"
+						/>
+					</div>
 
-					<button class="
-					block
-					w-full
-					bg-green-500
-					text-white
-					rounded-sm
-					py-3
-					text-sm
-					tracking-wide
-					" type="submit">
+
+					<button 
+					class="
+						block
+						w-full
+						bg-green-500
+						text-white
+						rounded-sm
+						py-3
+						text-sm
+						tracking-wide
+					" 
+					type="submit">
 						Register
 					</button>
 
@@ -66,3 +86,14 @@
 		</div>
 	</div>
 </template>
+
+<script setup>
+	import { ref } from 'vue';
+	import TextInput from '../components/global/TextInput.vue'
+
+	let firstName = ref(null)
+	let lastName = ref(null)
+	let email = ref(null)
+	let password = ref(null)
+	let confirmPassword = ref(null)
+</script>

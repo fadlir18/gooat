@@ -4,5 +4,5 @@
 </template>
 
 <style lang="scss">
-  @import url(../dist/caricari-style.css);
+  @import url(./css/caricari-style.css);
 </style>

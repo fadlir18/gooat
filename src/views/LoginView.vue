@@ -10,37 +10,26 @@
 				font-thin">You dope beats issa waiting you</h1>
 
 					<div class="mb-4">
-						<label class="
-					blockuppercase
-					tracking-wide
-					text-xs
-					font-bold
-					mb-2
-					text-gray-100
-					">
-							First Name
-						</label>
-
-						<input type="text" class="
-					appearance-none
-					block
-					w-full
-					bg-white
-					text-gray-700
-					border
-					border-gray-400
-					rounded
-					py-3
-					px-4
-					leading-tight
-					focus:outline-none
-					focus:bg-white
-					focus:border-gray-500
-					">
+						<TextInput 
+							label="Email" 
+							:labelColor="false" 
+							placeholder="lil.tracy@m.com" 
+							v-model:input="email"
+							inputType="text" 
+							error="Show your artist name" 
+						/>
 					</div>
-					<span class="text-red-500">
-						This is an error message
-					</span>
+
+					<div class="mb-4">
+						<TextInput 
+							label="Password" 
+							:labelColor="false" 
+							placeholder="password123" 
+							v-model:input="password"
+							inputType="password" 
+							error="Show your artist name" 
+						/>
+					</div>
 
 					<button class="
 					block
@@ -66,3 +55,11 @@
 		</div>
 	</div>
 </template>
+
+<script setup>
+	import { ref } from 'vue';
+	import TextInput from '../components/global/TextInput.vue'
+
+	let email = ref(null)
+	let password = ref(null)
+</script>
